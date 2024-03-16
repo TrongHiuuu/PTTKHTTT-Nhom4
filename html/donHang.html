@@ -1,0 +1,92 @@
+<html>
+    <link rel="stylesheet" href="../css/style_donHang.css">
+    <head>
+        <title>Đơn hàng - Vinabook.com</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="bodying">
+            <h4 class="sub-title">Đơn hàng</h4>
+            <div class="main-box"><h3 class="sub-title">Đơn hàng của tôi</h3>
+                <div class="input-list">
+                    <div class="inputs">
+                        <div class="float-left">Thời gian</div>
+                        <select>
+                            <option value="A" selected="selected">Tất cả</option>
+                            <optgroup label="================">
+                                <option value="D">Ngày hôm nay</option>
+                                <option value="W">Tuần này</option>
+                                <option value="M">Tháng này</option>
+                                <option value="Y">Năm này</option>
+                            </optgroup>
+                            <optgroup label="================">
+                                <option value="LD">Ngày hôm qua</option>
+                                <option value="LW">Tuần trước</option>
+                                <option value="LM">Tháng trước</option>
+                                <option value="LY">Năm trước</option>
+                            </optgroup>
+                            <optgroup label="================">
+                                <option value="HD">24h qua</option>
+                                <option value="HW">7 ngày qua</option>
+                                <option value="HM">30 ngày qua</option>
+                            </optgroup>
+                            <optgroup label="================">
+                                <option value="O">Khác</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="inputs">
+                        <div class="float-left">Chọn Ngày</div>
+                        <input type="date" class="input-field">
+                        <p style="margin: 0px 15px">-</p>
+                        <input type="date" class="input-field">
+                    </div>
+                    <div class="inputs">
+                        <div class="float-left">Mã đơn hàng:</div>
+                        <input type="text" class="input-field">
+                    </div>
+                    
+                </div>
+                <div class="submit-button">
+                    <button class="buttons">Tìm kiếm</button>
+                </div>
+                <div class="result">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 7%;">
+                                    <a>ID</a>
+                                </th>
+                                <th style="width: 20%;">
+                                    <a>Ngày</a>
+                                </th>
+                                <th style="width: 44%;">
+                                    <a>Khách hàng</a>
+                                </th>
+                                <th style="width: 15%;">
+                                    <a>Tổng cộng</a>
+                                </th>
+                                <th style="width: 15%;">
+                                    <a>Đã thanh toán</a>
+                                </th>
+                                <th style="width: 15%;">
+                                    <a>Còn lại</a>
+                                </th>
+                                <th style="width: 14%;">
+                                    <a>Trạng thái</a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="7">
+                                    <p class="no-items">Không tìm thấy đơn hàng</p>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

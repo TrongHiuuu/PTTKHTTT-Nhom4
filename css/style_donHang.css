@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bodying{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 800px;
+    margin: 5% 10%;
+}
+
+.sub-title{
+    margin: 15px 15px 0px 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed gray;
+}
+
+.main-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 800px;
+    border: 1px solid gray;
+    margin: 2% 4%;
+}
+
+.input-list{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+}
+
+.float-left{
+    min-width: 200px;
+}
+
+.input-field{
+    min-width: 200px;
+}
+
+.submit-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 15px 15px 45px 15px;
+}
+
+.buttons{
+    width: 100px;
+    height: 33px;
+}
+
+.result{
+    min-height: 275px;
+    margin: 10px
+}
