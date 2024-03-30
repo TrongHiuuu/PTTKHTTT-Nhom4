@@ -1,17 +1,18 @@
 <?php
     session_start();
-    $error = false;
+    $error = '';
     if (isset($_POST['confirm'])) {
         require "../../includes/connect.php";
-        $email = /*mysqli_real_escape_string($conn, */$_POST['email'];
+        $email = $_POST['email'];
         $sql = "SELECT email FROM tbl_user WHERE email='$email' LIMIT 1";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
+            $_SESSION['reset_password'] = $email;
             header("location:forgotPasswordPage2.php"); 
             die();
         }
         else {
-            $error = true;
+            $error = 'Chúng tôi không tìm thấy địa chỉ email này.';
         }
     }
 ?>
@@ -74,9 +75,9 @@
                     <i class="fa-solid fa-envelope"></i>
                     <input type="text" name="email" placeholder="Nhập vào email của bạn...">
                 </div>
-                <?php if($error === true):?>
+                <?php if(!empty($error)):?>
                     <div class="container-form-row5">
-                        <p>Chúng tôi không tìm thấy địa chỉ email này.</p>
+                        <p><?php echo $error;?></p>
                     </div>
                 <?php endif ?>
                 <div class="container-form-row6">

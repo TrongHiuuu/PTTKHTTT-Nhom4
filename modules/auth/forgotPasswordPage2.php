@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    include "../../includes/functions.php";
+    if (isset($_POST['submit'])) {
+        $password = $_POST['password'];
+        $r_password = $_POST['r_password'];
+
+        if (check_password_is_correct($password, $r_password)) {
+            require_once "../../includes/connect.php";
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "UPDATE tbl_user SET password='".$password_hash."'WHERE email='".$_SESSION['reset_password']."' LIMIT 1";
+            $result = mysqli_query($conn, $sql);
+
+            if($result) {
+                header("location:forgotPasswordPage3.php");
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,21 +70,21 @@
                     <span>Nhập mật khẩu mới</span>
                     <div class="container-form-row2-newPassword-ds">
                         <i class="fa-solid fa-key"></i>
-                        <input type="password" name="" id="">
+                        <input type="password" name="password" id="">
                     </div>
                 </div>
                 <div class="container-form-row3-confirmPassword">
                     <span>Nhập lại mật khẩu mới</span>
                     <div class="container-form-row3-confirmPassword-ds">
                         <i class="fa-solid fa-key"></i>
-                        <input type="password" name="" id="">
+                        <input type="password" name="r_password" id="">
                     </div>
                     <div class="container-form-row3-confirmPassword-notMatch">
                         <p>Mật khẩu bạn vừa nhập không khớp với mật khẩu mới.</p>
                     </div>
                 </div>
                 <div class="container-form-row4">
-                    <input type="submit" name="" id="" value="Khôi Phục Mật Khẩu">
+                    <input type="submit" name="submit" id="" value="Khôi Phục Mật Khẩu">
                 </div>
                 <div class="container-form-row5">
                     <i>Trở về trang <a href="login.php"> đăng nhập</a></i>
