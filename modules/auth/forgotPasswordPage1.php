@@ -1,22 +1,17 @@
 <?php
     session_start();
-    if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        require_once "../../includes/connect.php";
-        $sql = "SELECT * FROM tbl_user WHERE email= '$email' LIMIT 1";
+    $error = false;
+    if (isset($_POST['confirm'])) {
+        require "../../includes/connect.php";
+        $email = /*mysqli_real_escape_string($conn, */$_POST['email'];
+        $sql = "SELECT email FROM tbl_user WHERE email='$email' LIMIT 1";
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user) {
-            if(password_verify($password, $user['password'])){
-                $_SESSION['user'] = $username;
-                header("location:../../index.php"); 
-                die();
-            }     
+        if (mysqli_num_rows($result) > 0) {
+            header("location:forgotPasswordPage2.php"); 
+            die();
         }
         else {
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại")</script>';
+            $error = true;
         }
     }
 ?>
@@ -25,12 +20,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạo tài khoản mới - Vinabook</title>
     <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../templates/css/signInCSS.css">
+    <link rel="stylesheet" href="../../templates/css/forgotPasswordPage1CSS.css">
     <link rel="icon" href="../../templates/img/vnbLogo.jpg">
 </head>
     <body>
@@ -67,52 +60,32 @@
             </nav>
         </header>
         <div class="container">
-            <ul class="container-row">
-                <div class="container-row1">
-                    <li class="container-row1-items">
-                        Trang chủ
-                    </li>
-                    <li class="container-row1-items">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </li>
-                    <li class="container-row1-items">
-                        Đăng nhập
-                    </li>
+            <div class="container-form">
+                <div class="container-form-row1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
                 </div>
-            </ul>
-            <ul class="container-row">
-                <div class="container-row2">
-                    <li class="container-row1-items">
-                        <h2>Đăng nhập vào tài khoản</h2>
-                        <div class="container-row1-items-hr"></div>
-                    </li>
+                <div class="container-form-row2">
+                    <strong>Quên Mật Khẩu</strong>
                 </div>
-            </ul>
-            <ul class="container-row">
-                <div class="signIn-box">
-                    <div class="signIn-box-row1">
-                        Đăng nhập
-                    </div>
-                    <div class="signIn-box-row2">
-                    </div>
-                    <div class="signIn-box-row3">
-                        <div class="signIn-box-row3-form">
-                            <form action="login.php" method="POST">
-                                <div class="signIn-box-row3-form-items">
-                                    <strong>Email<span style="color: #D64830">*</span></strong><input type="text" name="email" id="email">
-                                </div>
-                                <div class="signIn-box-row3-form-items">
-                                    <strong>Mật khẩu<span style="color: #D64830">*</span></strong><input type="password" name="password" id="password">
-                                </div>
-                                <div class="signIn-box-row3-right-button"> <button type="submit" name="login">Đăng nhập</button></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="signIn-box-row5">
-                        Chưa có tài khoản? <a style="text-decoration: none; color: #0066C0" href="register.php">Đăng ký ngay</a>
-                    </div>
+                <div class="container-form-row3">
+                    <p>Vui lòng nhập vào địa chỉ email của bạn, chúng tôi sẽ gửi mã xác nhận nhằm giúp bạn khôi phục mật khẩu.</p>
                 </div>
-            </ul>
+                <div class="container-form-row4">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" name="email" placeholder="Nhập vào email của bạn...">
+                </div>
+                <?php if($error === true):?>
+                    <div class="container-form-row5">
+                        <p>Chúng tôi không tìm thấy địa chỉ email này.</p>
+                    </div>
+                <?php endif ?>
+                <div class="container-form-row6">
+                    <input type="submit" name="confirm" id="confirm" value="Gửi Mã Xác Nhận">
+                </div>
+                <div class="container-form-row7">
+                    <i>Trở về trang <a href="login.php"> đăng nhập</a></i>
+                </div>
+            </div>
         </div>
     </body>
     <footer class="footer">

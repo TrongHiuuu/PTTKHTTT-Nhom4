@@ -1,37 +1,12 @@
-<?php
-    session_start();
-    if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        require_once "../../includes/connect.php";
-        $sql = "SELECT * FROM tbl_user WHERE email= '$email' LIMIT 1";
-        $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user) {
-            if(password_verify($password, $user['password'])){
-                $_SESSION['user'] = $username;
-                header("location:../../index.php"); 
-                die();
-            }     
-        }
-        else {
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại")</script>';
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạo tài khoản mới - Vinabook</title>
     <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../templates/css/signInCSS.css">
-    <link rel="icon" href="../../templates/img/vnbLogo.jpg">
+    <link rel="stylesheet" href="../css/signInCSS.css">
+    <link rel="icon" href="../img/vnbLogo.jpg">
 </head>
     <body>
         <header class="header">
@@ -39,7 +14,7 @@
                 <!-- các elements trên navbar -->
                 <ul class="header-navbar-list">
                     <li class="header-navbar-items">
-                        <a href=""><img src="../../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                        <a href=""><img src="../img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                     </li>
                     <li class="header-navbar-items">
                         <div class="header-navbar-items-search">
@@ -57,9 +32,9 @@
                                 </a>
                             </div>
                             <div class="header-navbar-items-SignIn-SignUp">
-                                <a id="signin" href="login.php"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
+                                <a id="signin" href="#"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
                                 <div class="header-navbar-items-separate"></div>
-                                <a id="signup" href="register.php"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
+                                <a id="signup" href="../html/signUp.html"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
                             </div>
                         </div>
                     </li>
@@ -97,19 +72,19 @@
                     </div>
                     <div class="signIn-box-row3">
                         <div class="signIn-box-row3-form">
-                            <form action="login.php" method="POST">
+                            <form action="">
                                 <div class="signIn-box-row3-form-items">
                                     <strong>Email<span style="color: #D64830">*</span></strong><input type="text" name="email" id="email">
                                 </div>
                                 <div class="signIn-box-row3-form-items">
-                                    <strong>Mật khẩu<span style="color: #D64830">*</span></strong><input type="password" name="password" id="password">
+                                    <strong>Mật khẩu<span style="color: #D64830">*</span></strong><input type="password" name="email" id="email">
                                 </div>
-                                <div class="signIn-box-row3-right-button"> <button type="submit" name="login">Đăng nhập</button></div>
+                                <div class="signIn-box-row3-right-button"> <button> ĐĂNG NHẬP</button></div>
                             </form>
                         </div>
                     </div>
                     <div class="signIn-box-row5">
-                        Chưa có tài khoản? <a style="text-decoration: none; color: #0066C0" href="register.php">Đăng ký ngay</a>
+                        Chưa có tài khoản? <a style="text-decoration: none; color: #0066C0" href="../html/signUp.html">Đăng ký ngay</a>
                     </div>
                 </div>
             </ul>
@@ -124,14 +99,14 @@
                 <div class="footer-row2-content">
                     <div class="footer-row2-content-items">
                         <div class="footer-row2-content-items-left1">
-                            <img src="../../templates/img/bocongthuong.png" alt="">
+                            <img src="../img/bocongthuong.png" alt="">
                         </div>
                         <div class="footer-row2-content-items-left2">
                             WEBSITE CÙNG HỆ THỐNG
                         </div>
                         <div class="footer-row2-content-items-left3"> 
-                            <img class="footer-row2-content-items-left3-img1" src="../../templates/img/hotdeal.png" alt="">
-                            <img class="footer-row2-content-items-left3-img2" src="../../templates/img/yesgo.png" alt="">
+                            <img class="footer-row2-content-items-left3-img1" src="../img/hotdeal.png" alt="">
+                            <img class="footer-row2-content-items-left3-img2" src="../img/yesgo.png" alt="">
                         </div>
                     </div>
                     <div class="footer-row2-content-items">

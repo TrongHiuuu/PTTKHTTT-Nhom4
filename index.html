@@ -1,28 +1,11 @@
-<?php
-    session_start();
-    if (isset($_GET['action'])) {
-        switch ($_GET['action']) {
-            case 'login':
-                header("location:modules/auth/login.php");
-                break;
-            case 'register':
-                header("location:modules/auth/register.php");
-            default:
-                break;
-        }
-    }
-    
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templates/css/homePageCSS.css">
-    <link rel="icon" href="templates/img/vnbLogo.jpg">
+    <link rel="stylesheet" href="../templates/css/homePageCSS.css">
+    <link rel="icon" href="../templates/img/vnbLogo.jpg">
     <title>Vinabook.com</title>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
@@ -34,7 +17,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href=""><img src="../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-search">
@@ -52,9 +35,9 @@
                                     </a>
                                 </div>
                                 <div class="header-navbar-items-SignIn-SignUp">
-                                    <a id="signin" href="modules/auth/login.php"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
+                                    <a id="signin" href="#"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
                                     <div class="header-navbar-items-separate"></div>
-                                    <a id="signup" href="modules/auth/register.php"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
+                                    <a id="signup" href="#"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
                                 </div>
                             </div>
                         </li>
@@ -153,10 +136,10 @@
                         <div class="container-top-dropDownList-and-banner-right">
                             <div class="container-top-dropDownList-and-banner-right-slideshow">
                                 <div class="container-top-dropDownList-and-banner-right-slideshow-listImage">
-                                    <img class="nature"src="templates/img/banner1.jpg" alt="">
-                                    <img class="nature" src="templates/img/banner2.jpg" alt="">
-                                    <img class="nature" src="templates/img/banner3.jpg" alt="">
-                                    <img class="nature" src="templates/img/banner4.jpg" alt="">
+                                    <img class="nature"src="../templates/img/banner1.jpg" alt="">
+                                    <img class="nature" src="../templates/img/banner2.jpg" alt="">
+                                    <img class="nature" src="../templates/img/banner3.jpg" alt="">
+                                    <img class="nature" src="../templates/img/banner4.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -169,7 +152,7 @@
                             </div>
                             <div class="container-bottom-content-bigProductCard">
                                 <div class="container-bottom-content-bigProductCardcontent">
-                                    <img src="templates/img/book1.jpg" alt="">
+                                    <img src="../templates/img/book1.jpg" alt="">
                                 </div>
                                 <div class="container-bottom-content-bigProductCardcontent">
                                     <div class="container-bottom-content-bigProductCardcontent-text1">
@@ -204,7 +187,7 @@
                             <div class="container-bottom-content-productList">
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -232,7 +215,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -260,7 +243,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -288,7 +271,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -316,7 +299,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -344,7 +327,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -376,7 +359,7 @@
                             </div>
                             <div class="container-bottom-content-bigProductCard">
                                 <div class="container-bottom-content-bigProductCardcontent">
-                                    <img src="templates/img/book1.jpg" alt="">
+                                    <img src="../templates/img/book1.jpg" alt="">
                                 </div>
                                 <div class="container-bottom-content-bigProductCardcontent">
                                     <div class="container-bottom-content-bigProductCardcontent-text1">
@@ -411,7 +394,7 @@
                             <div class="container-bottom-content-productList">
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -439,7 +422,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -467,7 +450,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -495,7 +478,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -523,7 +506,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -551,7 +534,7 @@
                                 </div>
                                 <div class="container-bottom-content-productCard">
                                     <div class="container-bottom-content-productCardcontent">
-                                        <img src="templates/img/book3.jpg" alt="">
+                                        <img src="../templates/img/book3.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-productCardcontent">
                                         <div class="container-bottom-content-productCardcontent-text1">
@@ -586,7 +569,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -609,7 +592,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -632,7 +615,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -655,7 +638,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -678,7 +661,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -701,7 +684,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -727,7 +710,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -750,7 +733,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -773,7 +756,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -796,7 +779,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -819,7 +802,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -842,7 +825,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -865,7 +848,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -888,7 +871,7 @@
                             <div class="container-bottom-content-right-productList">
                                 <div class="container-bottom-content-right-productList-productCard">
                                     <div class="container-bottom-content-right-productList-productCardcontent">
-                                        <img src="templates/img/book4.jpg" alt="">
+                                        <img src="../templates/img/book4.jpg" alt="">
                                     </div>
                                     <div class="container-bottom-content-right-productList-productCardcontent">
                                         <div class="container-bottom-content-right-productList-productCardcontent-text1">
@@ -923,14 +906,14 @@
                 <div class="footer-row2-content">
                     <div class="footer-row2-content-items">
                         <div class="footer-row2-content-items-left1">
-                            <img src="templates/img/bocongthuong.png" alt="">
+                            <img src="../templates/img/bocongthuong.png" alt="">
                         </div>
                         <div class="footer-row2-content-items-left2">
                             WEBSITE CÙNG HỆ THỐNG
                         </div>
                         <div class="footer-row2-content-items-left3"> 
-                            <img class="footer-row2-content-items-left3-img1" src="templates/img/hotdeal.png" alt="">
-                            <img class="footer-row2-content-items-left3-img2" src="templates/img/yesgo.png" alt="">
+                            <img class="footer-row2-content-items-left3-img1" src="../templates/img/hotdeal.png" alt="">
+                            <img class="footer-row2-content-items-left3-img2" src="../templates/img/yesgo.png" alt="">
                         </div>
                     </div>
                     <div class="footer-row2-content-items">
