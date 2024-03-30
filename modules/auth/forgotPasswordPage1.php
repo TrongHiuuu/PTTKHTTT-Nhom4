@@ -33,7 +33,7 @@
                 <!-- các elements trên navbar -->
                 <ul class="header-navbar-list">
                     <li class="header-navbar-items">
-                        <a href=""><img src="../../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                        <a href="../../index.php"><img src="../../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                     </li>
                     <li class="header-navbar-items">
                         <div class="header-navbar-items-search">

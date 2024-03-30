@@ -1,22 +1,25 @@
 <?php
-    session_start();
+    include "../../includes/session.php";
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        require_once "../../includes/connect.php";
+        require "../../includes/connect.php";
         $sql = "SELECT * FROM tbl_user WHERE email= '$email' LIMIT 1";
         $result = mysqli_query($conn, $sql);
         $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user) {
+        if (mysqli_num_rows($result) > 0) {
             if(password_verify($password, $user['password'])){
-                $_SESSION['user'] = $username;
+                $_SESSION['user']['username'] = $user['email'];
+                $_SESSION['user']['fullname'] = $user['fullname'];
                 header("location:../../index.php"); 
-                die();
-            }     
+            }  
+            else {
+                echo '<script>alert("Mật khẩu không đúng, vui lòng nhập lại")</script>';
+            }   
         }
         else {
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại")</script>';
+            echo '<script>alert("Tài khoản không tồn tại")</script>';
         }
     }
 ?>
@@ -39,7 +42,7 @@
                 <!-- các elements trên navbar -->
                 <ul class="header-navbar-list">
                     <li class="header-navbar-items">
-                        <a href=""><img src="../../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                        <a href="../../index.php"><img src="../../templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                     </li>
                     <li class="header-navbar-items">
                         <div class="header-navbar-items-search">

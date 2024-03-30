@@ -1,17 +1,21 @@
 <?php
-    session_start();
-    if (isset($_GET['action'])) {
+    include "includes/session.php";
+    /*if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'login':
                 header("location:modules/auth/login.php");
                 break;
             case 'register':
                 header("location:modules/auth/register.php");
+                break;
+            case 'logout':
+                header("location:modules/auth/logout.php");
+                break;
             default:
                 break;
         }
     }
-    
+    */
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +32,22 @@
 </head>
     <body>
         <div class="website">
+            <div><?php var_dump($_SESSION); ?></div>
+            <div>
+                <?php if (!isset($_SESSION['user']['fullname'])):?>
+                    <div><p><?php echo "Bạn chưa đăng nhập"?></p></div>
+                <?php else:?>
+                    <div><p><?php echo "Xin chào ".$_SESSION['user']['fullname']."!";?></p></div>
+                <?php endif ?>
+            </div>
+            
             <!-- phần header có navbar -->
             <header class="header">
                 <nav class="header-navbar">
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href="index.php"><img src="templates/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-search">
@@ -52,7 +65,11 @@
                                     </a>
                                 </div>
                                 <div class="header-navbar-items-SignIn-SignUp">
-                                    <a id="signin" href="modules/auth/login.php"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
+                                    <?php if(!isset($_SESSION['user']['username'])): ?>
+                                        <a id="signin" href="modules/auth/login.php"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
+                                    <?php else: ?>
+                                        <a id="logout" href="modules/auth/logout.php"><div class="header-navbar-items-SignIn">Đăng xuất</div></a>
+                                    <?php endif ?>
                                     <div class="header-navbar-items-separate"></div>
                                     <a id="signup" href="modules/auth/register.php"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
                                 </div>
